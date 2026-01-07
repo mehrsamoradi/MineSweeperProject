@@ -10,4 +10,10 @@ kotlin {
     compilerOptions {
         jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11
     }
+
+    sourceSets {
+        dependencies {
+            implementation(projects.data.core)
+        }
+    }
 }

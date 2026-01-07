@@ -15,7 +15,7 @@ kotlin {
             jvmTarget.set(JvmTarget.JVM_11)
         }
     }
-    
+
     listOf(
         iosArm64(),
         iosSimulatorArm64()
@@ -25,15 +25,22 @@ kotlin {
             isStatic = true
         }
     }
-    
+
     jvm()
-    
+
     sourceSets {
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
         }
         commonMain.dependencies {
+            implementation(projects.ui.core)
+            implementation(projects.feature.menu)
+            implementation(projects.feature.settings)
+            implementation(projects.feature.highscores)
+            implementation(projects.feature.play)
+
+
             implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material3)
