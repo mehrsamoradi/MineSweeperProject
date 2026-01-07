@@ -33,3 +33,13 @@ plugins {
 }
 
 include(":composeApp")
+include(":ui:core")
+include(":feature:menu")
+include(":feature:settings")
+include(":feature:highscores")
+include(":feature:play")
+include(":domian:settings")
+include(":domain:game")
+include(":data:settings")
+include(":data:game")
+include(":data:core")
