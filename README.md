@@ -12,6 +12,11 @@ This is a Kotlin Multiplatform project targeting Android, iOS, Desktop (JVM).
 * [/iosApp](./iosApp/iosApp) contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform,
   you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
 
+
+### Multi-module structure
+
+[![Module structure](./docs/figma_multimodule.png)](https://www.figma.com/file/gXLJ603XSVbeCAmDwQJmzY/MineSweeper?node-id=0-1&embed-host=share)
+
 ### Build and Run Android Application
 
 To build and run the development version of the Android app, use the run configuration from the run widget
