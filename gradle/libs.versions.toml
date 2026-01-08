@@ -43,6 +43,7 @@ kotlinStdlib = "2.2.21"
 runner = "1.7.0"
 core = "1.7.0"
 jetbrainsKotlinJvm = "2.2.21"
+material = "1.13.0"
 
 
 [libraries]
@@ -91,7 +92,12 @@ androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "a
 kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlinStdlib" }
 androidx-runner = { group = "androidx.test", name = "runner", version.ref = "runner" }
 androidx-core = { group = "androidx.test", name = "core", version.ref = "core" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
+
+# Gradle Plugins
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+android-gradle-plugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
 
 [bundles]
 kotlin = ["kotlinx-dateTime", "coroutines-core", "kotlinx-serialization"]
@@ -113,3 +119,11 @@ kotest-multiplatform = { id = "io.kotest.multiplatform", version.ref = "kotest" 
 android-kotlin-multiplatform-library = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }
 android-lint = { id = "com.android.lint", version.ref = "agp" }
 jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+
+# Custom Gradle Plugins
+app-kotlinMultiplatform = { id = "org.minesweeper.project.kotlin.multiplatform" }
+app-androidLibrary = { id = "org.minesweeper.project.android.library" }
+app-domainModule = { id = "org.minesweeper.project.domain.module" }
+app-dataModule = { id = "org.minesweeper.project.data.module" }
+app-featureModule = { id = "org.minesweeper.project.feature.module" }

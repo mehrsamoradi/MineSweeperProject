@@ -1,6 +1,3 @@
-rootProject.name = "MineSweeperProject"
-enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
-
 pluginManagement {
     repositories {
         google {
@@ -26,23 +23,12 @@ dependencyResolutionManagement {
         }
         mavenCentral()
     }
+
+    versionCatalogs {
+        create("libs") {
+            from(files("../gradle/libs.versions.toml"))
+        }
+    }
 }
 
-plugins {
-    id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
-}
-
-includeBuild("build-logic")
-
-include(":composeApp")
-include(":ui:core")
-include(":feature:menu")
-include(":feature:settings")
-include(":feature:highscores")
-include(":feature:play")
-include(":domain:game")
-include(":domain:settings")
-include(":data:settings")
-include(":data:game")
-include(":data:core")
-include(":domain:mylibrary")
+include(":conventions")

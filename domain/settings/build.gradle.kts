@@ -1,13 +1,16 @@
 plugins {
-    id("java-library")
-    alias(libs.plugins.jetbrains.kotlin.jvm)
+    alias(libs.plugins.app.domainModule)
 }
-java {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
-}
+
 kotlin {
-    compilerOptions {
-        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11
+
+    sourceSets {
+
+        commonMain.dependencies {
+            implementation(projects.data.settings)
+
+            implementation(libs.bundles.kotlin)
+        }
+
     }
 }

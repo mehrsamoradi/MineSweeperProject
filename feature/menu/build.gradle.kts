@@ -61,6 +61,8 @@ kotlin {
             dependencies {
                 implementation(libs.kotlin.stdlib)
                 // Add KMP dependencies here
+
+                implementation(projects.ui.core)
             }
         }
 
@@ -93,8 +95,6 @@ kotlin {
                 // part of KMP’s default source set hierarchy. Note that this source set depends
                 // on common by default and will correctly pull the iOS artifacts of any
                 // KMP dependencies declared in commonMain.
-
-                implementation(projects.ui.core)
             }
         }
     }
