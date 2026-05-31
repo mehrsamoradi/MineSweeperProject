@@ -1,5 +1,6 @@
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import java.net.URI
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
@@ -7,6 +8,7 @@ plugins {
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.composeHotReload)
+    alias(libs.plugins.dokka)
 }
 
 kotlin {
@@ -15,7 +17,7 @@ kotlin {
             jvmTarget.set(JvmTarget.JVM_11)
         }
     }
-    
+
 //    listOf(
 //        iosArm64(),
 //        iosSimulatorArm64()
@@ -25,9 +27,9 @@ kotlin {
 //            isStatic = true
 //        }
 //    }
-    
+
     jvm()
-    
+
     sourceSets {
         androidMain.dependencies {
             implementation(compose.preview)
@@ -95,3 +97,11 @@ compose.desktop {
         }
     }
 }
+
+dokka {
+    dokkaPublications.html {
+        moduleName.set("ComposeApp")
+        includes.from("README.md")
+    }
+}
+

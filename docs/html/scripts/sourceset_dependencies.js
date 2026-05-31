@@ -1,0 +1,1 @@
+sourceset_dependencies = '{":composeApp/androidMain":[":composeApp/commonMain"],":composeApp/androidRelease":[":composeApp/commonMain"],":composeApp/commonMain":[],":composeApp/jvmMain":[":composeApp/commonMain"]}'
