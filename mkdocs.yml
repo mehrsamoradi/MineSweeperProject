@@ -1,0 +1,28 @@
+site_name: Project Documentation
+repo_url: https://github.com/your-org/your-repo
+theme:
+  name: dracula
+  favicon: assets/favicon.ico
+  highlight_css: atom-one-dark.min.css
+  language: fa
+  palette:
+    primary: indigo
+    accent: indigo
+markdown_extensions:
+  - md_in_html
+extra_css:
+  - stylesheets/extra.css
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Change Log: product/CHANGELOG_FA.md
+  - Architecture: technical/architecture.md
+  - Development:
+      - Coding Style: dev/coding-style.md
+  - Product:
+      - Proposal: product/PRD.md
+      - User Story: product/UserStory.pdf
+      - Roadmap: product/roadmap.pdf
+  - UX:
+      -  User Flow: ux/UserFlow.md
+      -  Wireframe: ux/Wireframe.md

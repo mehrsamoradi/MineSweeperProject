@@ -1,0 +1,80 @@
+.rtl {
+  direction: rtl;
+  text-align: right;
+  unicode-bidi: embed;
+}
+
+.rtl p,
+.rtl li,
+.rtl ul,
+.rtl ol,
+.rtl h1,
+.rtl h2,
+.rtl h3,
+.rtl h4,
+.rtl h5,
+.rtl h6,
+.rtl blockquote,
+.rtl table,
+.rtl td,
+.rtl th {
+  direction: rtl;
+  text-align: right;
+}
+
+.rtl ul,
+.rtl ol {
+  padding-right: 2rem;
+  padding-left: 0;
+}
+
+.rtl blockquote {
+  border-right: 4px solid #666;
+  border-left: none;
+  padding-right: 1rem;
+  padding-left: 0;
+}
+
+.rtl code,
+.rtl pre,
+.rtl .highlight {
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: isolate;
+}
+
+
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('../assets/fonts/IRANSansWeb.woff2') format('woff2');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('../assets/fonts/IRANSansWeb_Medium.woff2') format('woff2');
+  font-weight: 700;
+}
+
+body,
+.md-content,
+.md-typeset,
+[lang="fa"],
+.rtl {
+  font-family: 'Vazirmatn', sans-serif;
+}
+
+code,
+pre {
+  font-family: monospace;
+}
+
+.yellow-callout {
+  background: #fff4c2;
+  border: 1px solid #f1c84b;
+  border-right: 6px solid #f4b400;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  color: #3b2f00;
+}

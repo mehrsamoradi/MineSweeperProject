@@ -1,4 +1,3 @@
-import org.jetbrains.dokka.DokkaDefaults.includeNonPublic
 import org.jetbrains.dokka.gradle.engine.parameters.VisibilityModifier
 import java.net.URI
 
@@ -21,7 +20,6 @@ dokka {
         moduleVersion.set("1.0.0")
         outputDirectory.set(file("${project.rootDir}/docs/html"))
         includes.from("README.md")
-        includes.from("PRD.md")
     }
     pluginsConfiguration {
         html {
@@ -29,21 +27,27 @@ dokka {
         }
     }
 
-    dokkaSourceSets.configureEach {
-        documentedVisibilities.set(setOf(VisibilityModifier.Public))
-        sourceLink {
-            localDirectory.set(file("src/main/kotlin"))
-            remoteUrl.set(URI("https://github.com/mehrsamoradi/MineSweeperProject"))
-            remoteLineSuffix.set("#L")
-        }
-        perPackageOption {
-            matchingRegex.set(".*\\.internal.*")
-            suppress.set(true)
+    dokkaSourceSets { // main sourceSet
+        configureEach {
+            // Include all markdown files under docs/product
+            includes.from(fileTree("${project.rootDir}/docs/product") { include("**/*.md") })
+            skipEmptyPackages.set(true)
+            documentedVisibilities.set(setOf(VisibilityModifier.Public))
+
+            sourceLink {
+                localDirectory.set(file("src/main/kotlin"))
+                remoteUrl.set(URI("https://github.com/mehrsamoradi/MineSweeperProject"))
+                remoteLineSuffix.set("#L")
+            }
+
+            perPackageOption {
+                matchingRegex.set(".*\\.internal.*")
+                suppress.set(true)
+            }
         }
     }
 }
 
 dependencies {
-//    dokka(project(":composeApp"))
-    dokka(project(":business"))
+    dokka(project(":composeApp"))
 }
